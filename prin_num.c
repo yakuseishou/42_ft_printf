@@ -82,14 +82,12 @@ void	prin_num_head(long long a, int *store)
 
 void	prin_num_value(long long a, int *store, int base, int l)
 {
-	if (a != 0)
+	char	*s;
+	if (a != 0 || !store[PERC])
 	{
-		ft_putstr(itoa_base(a, base, store[datahexcap]));
-		store[arlen] += l;
-	}
-	else if (!store[PERC])
-	{
-		ft_putstr(itoa_base(a, base, store[datahexcap]));
+		s = itoa_base(a, base, store[datahexcap]);
+		ft_putstr(s);
+		free(s);
 		store[arlen] += l;
 	}
 	if (store[num] > 0 && store[neg])
