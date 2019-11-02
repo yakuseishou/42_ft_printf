@@ -102,7 +102,7 @@ void	str_pad(va_list list, int *store)
 	}
 	if (s == NULL)
 	{
-		s = ft_strdup("(null)");
+		s = "(null)";
 		if (store[PERC] && 6 > store[PercNUM])
 			store[num] -= store[PercNUM];
 		else
